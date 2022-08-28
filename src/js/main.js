@@ -6,3 +6,5 @@ $('button').on('click', function() {
 });
 $('button').addAttribute('button-data');
 $('button').toggleAttr('button-data');
+
+console.log($('button').html('hello'));
