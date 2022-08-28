@@ -1,4 +1,8 @@
-import './lib/lib';
+import $ from './lib/lib';
 
 
-$('.active').addClass('hrllo', 'world');
+$('button').on('click', function() {
+  $(this).toggleClass('active');
+});
+$('button').addAttribute('button-data');
+$('button').toggleAttr('button-data');
