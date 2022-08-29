@@ -7,4 +7,9 @@ $('button').on('click', function() {
 $('button').addAttribute('button-data');
 $('button').toggleAttr('button-data');
 
-console.log($('button').html('hello'));
+$('div').click(function(){
+  console.log($(this).index())
+});
+
+console.log($('div').eq(2).find('.some'));
+
