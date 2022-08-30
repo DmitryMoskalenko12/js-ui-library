@@ -33,7 +33,7 @@
       <div class="card-title">Card title</div>
       <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione facere neque molestias, rem ipsam labore laborum? Laudantium assumenda similique alias inventore labore quis aut nulla odio molestias enim! Amet, ex.
       </p>
-      <a href="#" class="btn btn-primary">Link to</a>
+      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Link to</a>
     </div>
   </div>
 
@@ -43,7 +43,7 @@
       <div class="card-title">Card title #2</div>
       <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione facere neque molestias, rem ipsam labore laborum? Laudantium assumenda similique alias inventore labore quis aut nulla odio molestias enim! Amet, ex.
       </p>
-      <a href="#" class="btn btn-primary">Link to</a>
+      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Link to</a>
     </div>
   </div>
 </div>
@@ -51,24 +51,58 @@
 <div class="modal" id="exampleModal">
 <div class="modal-dialog">
   <div class="modal-content">
+
     <button class="close" data-close>
       <span>&times;</span>
     </button>
+
     <div class="modal-header">
       <div class="modal-title">
         Modal title
       </div>
+
       <div class="modal-body">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ea labore alias maxime quos illum deserunt culpa. Incidunt repudiandae ratione totam repellat. Fugit ut modi mollitia laudantium sapiente quidem molestiae.
       </div>
-      <div class="modal-foot">
+
+      <div class="modal-footer">
         <button class="btn btn-danger" data-close>Close</button>
         <button class="btn btn-success">Save changes</button>
       </div>
+
     </div>
   </div>
 </div>
 </div>
+
+
+
+<div class="modal" id="exampleModal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+  
+      <button class="close" data-close>
+        <span>&times;</span>
+      </button>
+  
+      <div class="modal-header">
+        <div class="modal-title">
+          Modal title #2
+        </div>
+  
+        <div class="modal-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        </div>
+  
+        <div class="modal-footer">
+          <button class="btn btn-danger" data-close>Close</button>
+          <button class="btn btn-success">Save changes</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  </div>
 </div>
 
     <script src='script.js'></script>
