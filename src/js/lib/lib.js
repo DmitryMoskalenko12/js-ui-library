@@ -4,6 +4,7 @@ import './modules/classes';
 import './modules/handler';
 import './modules/attribute';
 import './modules/actions';
-import './modules/effects'
+import './modules/effects';
+import './components/dropdown';
 
 export default $;
