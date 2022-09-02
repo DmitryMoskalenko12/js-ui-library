@@ -649,6 +649,10 @@ __webpack_require__.r(__webpack_exports__);
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addClass = function () {
   for (let i = 0; i < this.length; i++) {
+    if (!this[i].hasAttribute('class')) {
+      continue;
+    }
+
     this[i].classList.add(...arguments);
   }
 
@@ -657,19 +661,23 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addClass = function () {
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeClass = function () {
   for (let i = 0; i < this.length; i++) {
+    if (!this[i].hasAttribute('class')) {
+      continue;
+    }
+
     this[i].classList.remove(...arguments);
   }
 
   return this;
 };
 
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleClass = function () {
-  for (var _len = arguments.length, classNames = new Array(_len), _key = 0; _key < _len; _key++) {
-    classNames[_key] = arguments[_key];
-  }
-
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleClass = function (className) {
   for (let i = 0; i < this.length; i++) {
-    this[i].classList.toggle(classNames);
+    if (!this[i].hasAttribute('class')) {
+      continue;
+    }
+
+    this[i].classList.toggle(className);
   }
 
   return this;
@@ -943,43 +951,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.post = async function (u
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('#first').on('click', () => {
-  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('div').eq(1).fadeToggle(800);
-});
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('[data-count="second"]').on('click', () => {
-  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('div').eq(2).fadeToggle(800);
-});
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('button').eq(2).on('click', () => {
-  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('.w-500').fadeToggle(800);
-});
-/* $('.wrap').html(
-`<div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>
-      <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
-       <a href="#" class="dropdown-item">Action</a>
-       <a href="#" class="dropdown-item">Action #2</a>
-       <a href="#" class="dropdown-item">Action #3</a>
-      </div>
-    </div>`
-
-);
-$('.dropdown-toggle').dropdown(); */
-
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('#trigger').click(() => Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('#trigger').createModal({
-  text: {
-    title: 'Modal title',
-    body: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ea labore alias maxime quos illum deserunt culpa. Incidunt repudiandae ratione totam repellat. Fugit ut modi mollitia laudantium sapiente quidem molestiae.'
-  },
-  btns: {
-    count: 3,
-    settings: [['Close', ['btn-danger', 'mr-10'], true], ['Save changes', ['btn-success'], false, () => {
-      alert('Данні збережені');
-    }], ['Another btn', ['btn-warning', 'ml-10'], false, () => {
-      alert('Hello World');
-    }]]
-  }
-}));
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])().get('https://jsonplaceholder.typicode.com/todos/1').then(res => console.log(res));
 
 /***/ })
 
