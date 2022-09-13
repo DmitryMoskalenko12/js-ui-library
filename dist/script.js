@@ -246,17 +246,34 @@ __webpack_require__.r(__webpack_exports__);
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.modal = function (created) {
   for (let i = 0; i < this.length; i++) {
-    const target = this[i].getAttribute('data-target');
+    const target = this[i].getAttribute('data-target'),
+          scroll1 = scroll();
     Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).click(e => {
       e.preventDefault();
       Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(target).fadeIn(500);
       document.body.style.overflow = 'hidden';
+      document.body.style.marginRight = `${scroll1}px`;
     });
+
+    function scroll() {
+      const div = document.createElement('div');
+      div.style.cssText = `
+    width: 50px;
+    height: 50px;
+    visibility: hidden;
+    overflow-Y: scroll;`;
+      document.body.append(div);
+      const res = div.offsetWidth - div.clientWidth;
+      div.remove();
+      return res;
+    }
+
     const closeElements = document.querySelectorAll(`${target} [data-close]`);
     closeElements.forEach(elem => {
       Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(elem).click(() => {
         Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(target).fadeOut(500);
         document.body.style.overflow = '';
+        document.body.style.marginRight = `${0}px`;
 
         if (created) {
           document.querySelector(target).remove();
@@ -283,6 +300,9 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.createModal = function (
     text,
     btns
   } = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  const {
+    settings
+  } = btns;
 
   for (let i = 0; i < this.length; i++) {
     let modal = document.createElement('div');
@@ -292,15 +312,15 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.createModal = function (
 
     for (let j = 0; j < btns.count; j++) {
       let btn = document.createElement('button');
-      btn.classList.add('btn', ...btns.settings[j][1]);
-      btn.textContent = btns.settings[j][0];
+      btn.classList.add('btn', ...settings[j][1]);
+      btn.textContent = settings[j][0];
 
-      if (btns.settings[j][2]) {
+      if (settings[j][2]) {
         btn.setAttribute('data-close', 'true');
       }
 
-      if (btns.settings[j][3] && typeof btns.settings[j][3] === 'function') {
-        btn.addEventListener('click', btns.settings[j][3]);
+      if (settings[j][3] && typeof settings[j][3] === 'function') {
+        btn.addEventListener('click', settings[j][3]);
       }
 
       buttons.push(btn);
