@@ -33,3 +33,29 @@ $('#trigger').click(() => $('#trigger').createModal({
       ]
   }
 }));
+
+$('#trigger2').click(() => $('#trigger2').createModal({
+  text: {
+      title: 'Modal',
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
+  },
+  btns: {
+      count: 2,
+      settings: [
+          [
+              'Close',
+              ['btn-danger', 'mr-10'],
+              true
+          ],
+          [
+              'Save changes',
+              ['btn-success'],
+              false,
+              () => {
+                  alert('Данні отримані');
+              }
+          ]
+        
+      ]
+  }
+}));

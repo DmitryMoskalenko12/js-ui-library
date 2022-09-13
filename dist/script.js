@@ -985,6 +985,18 @@ Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('#trigger').click(() =>
     }]]
   }
 }));
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('#trigger2').click(() => Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('#trigger2').createModal({
+  text: {
+    title: 'Modal',
+    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
+  },
+  btns: {
+    count: 2,
+    settings: [['Close', ['btn-danger', 'mr-10'], true], ['Save changes', ['btn-success'], false, () => {
+      alert('Данні отримані');
+    }]]
+  }
+}));
 
 /***/ })
 
