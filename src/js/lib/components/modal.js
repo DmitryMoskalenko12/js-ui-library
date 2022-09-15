@@ -4,7 +4,6 @@ $.prototype.modal = function (created) {
   for(let i = 0; i < this.length; i++){
       const target = this[i].getAttribute('data-target'),
             scroll1 = scroll();
-
     $(this[i]).click((e) =>{
       e.preventDefault();
       $(target).fadeIn(500);
