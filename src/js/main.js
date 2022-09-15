@@ -1,7 +1,7 @@
 import $ from './lib/lib';
 
 
-$('#trigger').click(() => $('#trigger').createModal({
+/* $('#trigger').click(() => $('#trigger').createModal({
   text: {
       title: 'Modal title',
       body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum minus doloremque nesciunt enim rem quam corporis? Dolorem pariatur magnam distinctio perferendis. Ratione dolorem voluptates iusto facilis odit veritatis, suscipit voluptatibus!'
@@ -58,4 +58,5 @@ $('#trigger2').click(() => $('#trigger2').createModal({
         
       ]
   }
-}));
+})); */
+
